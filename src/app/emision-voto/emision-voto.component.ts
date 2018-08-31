@@ -19,6 +19,8 @@ export class EmisionVotoComponent implements OnInit {
     codigoPartido: ['']
   });
 
+  
+
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
@@ -33,8 +35,10 @@ export class EmisionVotoComponent implements OnInit {
       dpi: this.GrupoVoto.get('dpi').value,
       codigoPartido: this.GrupoVoto.get('codigoPartido').value
     }).subscribe(
-      (data:any) => {
-        console.warn(data);
+      (data) => {
+        const dataString = JSON.stringify(data);
+        const dataJson = JSON.parse(dataString);
+        console.warn(dataJson.id);
       }
     );
   }
