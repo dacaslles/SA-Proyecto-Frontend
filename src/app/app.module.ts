@@ -5,15 +5,18 @@ import { EmisionVotoComponent } from './emision-voto/emision-voto.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ConsultaCentrosComponent } from './consulta-centros/consulta-centros.component';
 
 const appRoutes: Routes = [
-  { path: 'EmisionVotos', component: EmisionVotoComponent}
+  { path: 'EmisionVotos', component: EmisionVotoComponent},
+  { path: 'ConsultaCentros', component: ConsultaCentrosComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmisionVotoComponent
+    EmisionVotoComponent,
+    ConsultaCentrosComponent
   ],
   imports: [
     RouterModule.forRoot(

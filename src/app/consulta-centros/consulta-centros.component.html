@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Consulta Centros</h1>
+  <form [formGroup]="GrupoCentro" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="dpi">ID</label>
+      <input type="text" class="form-control" formControlName="id" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+<div class="container">
+  <h1>Informacion de centros</h1>
+  <li *ngFor="let centro of centros">
+    <span>{{centro.nombre}}</span>
+    <div *ngIf="unCentro;then infoBlock"></div>
+    <ng-template #infoBlock>
+      <span><br>{{centro.direccion}}</span>
+      <span><br>{{centro.municipio}}</span>
+    </ng-template>
+  </li>
+</div>
