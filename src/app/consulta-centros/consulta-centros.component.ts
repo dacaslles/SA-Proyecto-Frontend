@@ -13,8 +13,10 @@ export class ConsultaCentrosComponent implements OnInit {
     id: new FormControl('')
   });
 
+   mostrarCentros;
    centros;
    unCentro;
+   titulo_lista;
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -23,19 +25,36 @@ export class ConsultaCentrosComponent implements OnInit {
 
   onSubmit(){
     const value = this.GrupoCentro.get('id').value;
+    this.mostrarCentros = false;
 
     if(value == ''){
       this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/centros-votacion/')
       .subscribe(
         (data) => {
+          this.titulo_lista = "Lista de centros de votación";
+          this.mostrarCentros = true;
+          this.unCentro = false;
           this.centros = data;
-          this.unCentro = true;
           //const dataString = JSON.stringify(data);
           //const dataJson = JSON.parse(dataString);
           //console.warn(dataJson);
         });
     } else {
-      console.warn(this.GrupoCentro.value);
+      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/centros-votacion/' + value)
+      .subscribe(
+        (data) => {
+          this.titulo_lista = "Información del centro";
+          this.mostrarCentros = true;
+          this.centros = data;
+          this.unCentro = true;
+        },
+        (error) => {
+          this.mostrarCentros = false;
+          this.titulo_lista = "No existe un centro con el ID indicado";
+          console.warn(error);
+        }
+        );
+      //console.warn(this.GrupoCentro.value);
     }
   }
 }

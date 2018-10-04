@@ -6,18 +6,29 @@
       <input type="text" class="form-control" formControlName="id" required>
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">Consultar</button>
 
   </form>
 </div>
 <div class="container">
-  <h1>Informacion de centros</h1>
-  <li *ngFor="let centro of centros">
-    <span>{{centro.nombre}}</span>
-    <div *ngIf="unCentro;then infoBlock"></div>
-    <ng-template #infoBlock>
-      <span><br>{{centro.direccion}}</span>
-      <span><br>{{centro.municipio}}</span>
-    </ng-template>
-  </li>
+  <h3 style="text-decoration:underline">{{titulo_lista}}</h3>
+  <div *ngIf="unCentro;then oneBlock else listBlock"></div>
+  
+  <ng-template #listBlock>
+    <div *ngIf="mostrarCentros">
+      <li *ngFor="let centro of centros">
+      <span style="font-weight: bold">{{centro.nombre}}</span>
+      </li>
+    </div>
+  </ng-template>
+
+  <ng-template #oneBlock>
+    <div *ngIf="mostrarCentros">
+      <span><span style="font-weight: bold">{{centros.nombre}}</span></span>
+      <ul>
+        <li><span>direccion: {{centros.direccion}}</span></li>
+        <li><span>municipio: {{centros.municipio}}</span></li>
+      </ul>
+    </div>
+  </ng-template>
 </div>

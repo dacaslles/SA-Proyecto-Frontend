@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Consulta Mesas</h1>
+    <form [formGroup]="GrupoMesa" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" formControlName="id" required>
+      </div>
+  
+      <button type="submit" class="btn btn-success">Consultar</button>
+  
+    </form>
+  </div>
+  <div class="container">
+      <h3 style="text-decoration:underline">{{titulo_lista}}</h3>
+    <div *ngIf="unaMesa;then oneBlock else listBlock"></div>
+    
+    <ng-template #listBlock>
+      <div *ngIf="mostrarMesas">
+        <li *ngFor="let mesa of mesas">
+        <span style="font-weight: bold">{{mesa.numMesa}}</span>
+        </li>
+      </div>
+    </ng-template>
+  
+    <ng-template #oneBlock>
+      <div *ngIf="mostrarMesas">
+        <span><span style="font-weight: bold">{{mesas.numMesa}}</span></span>
+        <ul>
+          <li><span>cantidad de nulos: {{mesas.cantNulos}}</span></li>
+          <li><span>cantidad de blancos: {{mesas.cantBlancos}}</span></li>
+        </ul>
+      </div>
+    </ng-template>
+  </div>

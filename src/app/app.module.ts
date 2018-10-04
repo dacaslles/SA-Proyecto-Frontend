@@ -6,17 +6,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultaCentrosComponent } from './consulta-centros/consulta-centros.component';
+import { ConsultaMesasComponent } from './consulta-mesas/consulta-mesas.component';
+import { ConsultaElectoresComponent } from './consulta-electores/consulta-electores.component';
 
 const appRoutes: Routes = [
   { path: 'EmisionVotos', component: EmisionVotoComponent},
-  { path: 'ConsultaCentros', component: ConsultaCentrosComponent}
+  { path: 'ConsultaCentros', component: ConsultaCentrosComponent},
+  { path: 'ConsultaMesas', component: ConsultaMesasComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     EmisionVotoComponent,
-    ConsultaCentrosComponent
+    ConsultaCentrosComponent,
+    ConsultaMesasComponent,
+    ConsultaElectoresComponent
   ],
   imports: [
     RouterModule.forRoot(
