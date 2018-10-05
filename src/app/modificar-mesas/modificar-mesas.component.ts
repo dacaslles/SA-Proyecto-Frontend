@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { Mesa } from '../mesa';
 
 @Component({
   selector: 'app-modificar-mesas',
@@ -38,21 +39,24 @@ export class ModificarMesasComponent implements OnInit {
   }
 
   onSubmit(){
-    const numMesa = this.GrupoMesa.get('numMesa');
-    const cantNulos = this.GrupoMesa.get('cantNulos');
-    const cantBlancos = this.GrupoMesa.get('cantBlancos');
+    const numMesa = this.GrupoMesa.get('numMesa').value;
+    const cantNulos = this.GrupoMesa.get('cantNulos').value;
+    const cantBlancos = this.GrupoMesa.get('cantBlancos').value;
+    
+    let datosMesa = new Mesa(this.mesa.id,numMesa,cantNulos,cantBlancos,{"idCentro":1});
+    
 
-    this.http.put('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/'+this.mesa.idMesa,
+    this.mesa.numMesa = numMesa;
+
+    this.http.put('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/'+this.mesa.idMesa,datosMesa,
       {
-        "idMesa": this.mesa.idMesa,
-        "numMesa": numMesa,
-        "cantNulos": cantNulos,
-        "cantBlancos": cantBlancos,
-        "centroVotacion": {"idCentro": 1}
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
       })
     .subscribe(
-      data => { console.log("succesful"); },
-      error => { console.warn(error); }
+      data => { console.warn("succesful"); },
+      error => { console.warn(JSON.stringify(error)); }
     );
   }
 }
