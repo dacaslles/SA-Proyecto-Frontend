@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consulta-mesas',
@@ -18,15 +19,20 @@ export class ConsultaMesasComponent implements OnInit {
    mesas;
    unaMesa;
    titulo_lista;
+   resultado;
+   mostrarModificar;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmit(){
+
     const value = this.GrupoMesa.get('id').value;
+    
     this.mostrarMesas = false;
+    this.resultado = "";
 
     if(value == ''){
       this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/')
@@ -48,6 +54,7 @@ export class ConsultaMesasComponent implements OnInit {
           this.mostrarMesas = true;
           this.mesas = data;
           this.unaMesa = true;
+          console.warn(data);
         },
         (error) => {
           this.mostrarMesas = false;
@@ -57,6 +64,23 @@ export class ConsultaMesasComponent implements OnInit {
         );
       //console.warn(this.GrupoCentro.value);
     }
+    
   }
 
+  onDelete(){
+    this.http.delete('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/' + this.mesas.idMesa)
+    .subscribe(
+      data => {
+        this.resultado = "elemento borrado correctamente";
+      },
+      error => {
+        this.resultado = "hubo un error al borrar el elemento";
+      }
+    );
+    //location.reload();
+  }
+  
+  onModify(){
+    this.router.navigate(['/ModificarMesa',this.mesas.idMesa]);
+  }
 }

@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Modificacion de mesa</h1>
+    <form [formGroup]="GrupoMesa" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="Numero de mesa">Numero de mesa</label>
+        <input type="text" class="form-control" formControlName="numMesa" value="{{mesa.numMesa}}" required>
+        <label for="Cantidad de nulos">Cantidad de nulos</label>
+        <input type="text" class="form-control" formControlName="cantNulos" value="{{mesa.cantNulos}}" required>
+        <label for="Cantidad de blancos">Cantidad de blancos</label>
+        <input type="text" class="form-control" formControlName="cantBlancos" value="{{mesa.cantBlancos}}" required>
+      </div>
+  
+      <button type="submit" class="btn btn-success">Modificar</button>
+  
+    </form>
+</div>
