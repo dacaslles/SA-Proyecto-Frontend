@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consulta-centros',
@@ -17,8 +18,9 @@ export class ConsultaCentrosComponent implements OnInit {
    centros;
    unCentro;
    titulo_lista;
+   resultado;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
   }
@@ -56,5 +58,22 @@ export class ConsultaCentrosComponent implements OnInit {
         );
       //console.warn(this.GrupoCentro.value);
     }
+  }
+
+  onDelete(){
+    this.http.delete('http://elecciones-sa.tk:8080/elecciones/rest/centros-votacion/' + this.centros.idCentro)
+    .subscribe(
+      data => {
+        this.resultado = "elemento borrado correctamente";
+      },
+      error => {
+        this.resultado = "hubo un error al borrar el elemento";
+      }
+    );
+    //location.reload();
+  }
+
+  onModify(){
+    this.router.navigate(['/ModificarCentro',this.centros.id]);
   }
 }

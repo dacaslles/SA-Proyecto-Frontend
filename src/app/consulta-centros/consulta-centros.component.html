@@ -29,6 +29,15 @@
         <li><span>direccion: {{centros.direccion}}</span></li>
         <li><span>municipio: {{centros.municipio}}</span></li>
       </ul>
+      <div style="width: 215px">
+        <div style="margin-right:auto;padding: 5px; width: 100px; display: inline-block">
+          <button (click)="onModify()" class="btn btn-secundary">Modificar</button>
+        </div>
+        <div style="margin-right:auto; padding:5px; width:100px; display:inline-block">
+          <button (click)="onDelete()" class="btn btn-primary">Borrar</button>
+        </div>
+      </div>
+      <div><span>{{resultado}}</span></div>
     </div>
   </ng-template>
 </div>

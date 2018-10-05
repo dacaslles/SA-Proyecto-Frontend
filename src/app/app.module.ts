@@ -9,12 +9,17 @@ import { ConsultaCentrosComponent } from './consulta-centros/consulta-centros.co
 import { ConsultaMesasComponent } from './consulta-mesas/consulta-mesas.component';
 import { ConsultaElectoresComponent } from './consulta-electores/consulta-electores.component';
 import { ModificarMesasComponent } from './modificar-mesas/modificar-mesas.component';
+import { AgregarCentroComponent } from './agregar-centro/agregar-centro.component';
+import { AgregarElectorComponent } from './agregar-elector/agregar-elector.component';
 
 const appRoutes: Routes = [
   { path: 'EmisionVotos', component: EmisionVotoComponent},
   { path: 'ConsultaCentros', component: ConsultaCentrosComponent},
   { path: 'ConsultaMesas', component: ConsultaMesasComponent},
-  { path: 'ModificarMesa/:id', component: ModificarMesasComponent}
+  { path: 'ModificarMesa/:id', component: ModificarMesasComponent},
+  { path: 'AgregarCentro', component: AgregarCentroComponent},
+  { path: 'ConsultaElectores', component: ConsultaElectoresComponent},
+  { path: 'AgregarElector', component: AgregarElectorComponent}
 ];
 
 @NgModule({
@@ -24,7 +29,9 @@ const appRoutes: Routes = [
     ConsultaCentrosComponent,
     ConsultaMesasComponent,
     ConsultaElectoresComponent,
-    ModificarMesasComponent
+    ModificarMesasComponent,
+    AgregarCentroComponent,
+    AgregarElectorComponent
   ],
   imports: [
     RouterModule.forRoot(

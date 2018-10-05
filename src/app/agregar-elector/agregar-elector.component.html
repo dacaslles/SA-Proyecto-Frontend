@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Agregar un centro</h1>
+  <form [formGroup]="GrupoElector" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="dpi">DPI</label>
+      <input type="text" class="form-control" formControlName="dpi"  required>
+      <label for="direccion">Numero de empadronamiento</label>
+      <input type="text" class="form-control" formControlName="numPadron"  required>
+      <label for="extraDireccion">Nombres</label>
+      <input type="text" class="form-control" formControlName="nombres"  required>
+      <label for="municipio">Apellidos</label>
+      <input type="text" class="form-control" formControlName="apellidos"  required>
+      <label for="">Fecha de nacimiento</label>
+      <input type="text" class="form-control" formControlName="fechaNacimiento"  required>
+      <label for="">Genero</label>
+      <input type="text" class="form-control" formControlName="genero"  required>
+      <label for="">Direccion</label>
+      <input type="text" class="form-control" formControlName="direccion"  required>
+      <label for="">Direccion extra</label>
+      <input type="text" class="form-control" formControlName="extraDireccion"  required>
+      <label for="">ID mesa</label>
+      <input type="text" class="form-control" formControlName="idMesa"  required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Agregar</button>
+
+  </form>
+</div>

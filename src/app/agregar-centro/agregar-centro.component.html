@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Agregar un centro</h1>
+  <form [formGroup]="GrupoCentro" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" formControlName="nombre"  required>
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" formControlName="direccion"  required>
+      <label for="extraDireccion">Direccion extra</label>
+      <input type="text" class="form-control" formControlName="extraDireccion"  required>
+      <label for="municipio">ID municipio</label>
+      <input type="text" class="form-control" formControlName="municipio"  required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Agregar</button>
+
+  </form>
+</div>

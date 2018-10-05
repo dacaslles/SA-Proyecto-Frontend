@@ -1,3 +1,44 @@
-<p>
-  consulta-electores works!
-</p>
+<div class="container">
+  <h1>Consulta Electores</h1>
+  <form [formGroup]="GrupoElector" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input type="text" class="form-control" formControlName="id" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Consultar</button>
+
+  </form>
+</div>
+<div class="container">
+  <h3 style="text-decoration:underline">{{titulo_lista}}</h3>
+  <div *ngIf="unElector;then oneBlock else listBlock"></div>
+  
+  <ng-template #listBlock>
+    <div *ngIf="mostrarElectores">
+      <li *ngFor="let elector of electores">
+      <span style="font-weight: bold">{{elector.dpi}} - {{elector.nombre}}</span>
+      </li>
+    </div>
+  </ng-template>
+
+  <ng-template #oneBlock>
+    <div *ngIf="mostrarElectores">
+      <span><span style="font-weight: bold">{{electores.dpi}}</span></span>
+      <ul>
+        <li><span>Numero de empadronamiento: {{electores.numPadron}}</span></li>
+        <li><span>Nombres: {{electores.nombres}}</span></li>
+        <li><span>Apellidos: {{electores.Apellidos}}</span></li>
+      </ul>
+      <div style="width: 215px">
+        <div style="margin-right:auto;padding: 5px; width: 100px; display: inline-block">
+          <button (click)="onModify()" class="btn btn-secundary">Modificar</button>
+        </div>
+        <div style="margin-right:auto; padding:5px; width:100px; display:inline-block">
+          <button (click)="onDelete()" class="btn btn-primary">Borrar</button>
+        </div>
+      </div>
+      <div><span>{{resultado}}</span></div>
+    </div>
+  </ng-template>
+</div>
