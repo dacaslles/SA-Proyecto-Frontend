@@ -61,7 +61,7 @@ export class ConsultaElectoresComponent implements OnInit {
   }
 
   onDelete(){
-    this.http.delete('http://elecciones-sa.tk:8080/elecciones/rest/electores/' + this.electores.id)
+    this.http.delete('http://elecciones-sa.tk:8080/elecciones/rest/electores/' + this.electores.idElector)
     .subscribe(
       data => {
         this.resultado = "elemento borrado correctamente";

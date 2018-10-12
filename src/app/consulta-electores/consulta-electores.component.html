@@ -43,11 +43,11 @@
 
   <ng-template #oneBlock>
     <div *ngIf="mostrarElectores">
-      <span><span style="font-weight: bold">{{electores.dpi}}</span></span>
+      <span><span style="font-weight: bold">DPI: {{electores.dpi}} - ID - {{electores.idElector}}</span></span>
       <ul>
         <li><span>Numero de empadronamiento: {{electores.numPadron}}</span></li>
         <li><span>Nombres: {{electores.nombres}}</span></li>
-        <li><span>Apellidos: {{electores.Apellidos}}</span></li>
+        <li><span>Apellidos: {{electores.apellidos}}</span></li>
       </ul>
       <div style="width: 215px">
         <div style="margin-right:auto;padding: 5px; width: 100px; display: inline-block">
