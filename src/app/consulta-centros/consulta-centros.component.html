@@ -16,9 +16,18 @@
   
   <ng-template #listBlock>
     <div *ngIf="mostrarCentros">
-      <li *ngFor="let centro of centros">
-      <span style="font-weight: bold">{{centro.nombre}}</span>
-      </li>
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Dirección</th>
+        </tr>
+        <tr *ngFor="let centro of centros">
+          <td>{{centro.idCentro}}</td>
+          <td>{{centro.nombre}}</td>
+          <td>{{centro.direccion + ", " + centro.extraDireccion}}</td>
+        </tr>
+      </table>
     </div>
   </ng-template>
 

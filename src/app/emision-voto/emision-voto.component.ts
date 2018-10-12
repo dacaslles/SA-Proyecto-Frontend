@@ -30,10 +30,10 @@ export class EmisionVotoComponent implements OnInit {
     console.warn(this.GrupoVoto.value);
     console.warn(this.GrupoVoto.get('dpi').value);
 
-    this.http.post('https://my-json-server.typicode.com/dacaslles/fake-json-server/votos/',
+    this.http.post('http://elecciones-sa.tk:8080/elecciones/rest/votos/emitir-voto',
     {
       dpi: this.GrupoVoto.get('dpi').value,
-      codigoPartido: this.GrupoVoto.get('codigoPartido').value
+      partido: this.GrupoVoto.get('codigoPartido').value
     }).subscribe(
       (data) => {
         const dataString = JSON.stringify(data);

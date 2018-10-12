@@ -50,8 +50,8 @@ export class AgregarElectorComponent implements OnInit {
         })
       })
     .subscribe(
-      data => { console.warn("succesful"); },
-      error => { console.warn(JSON.stringify(error)); }
+      data => { alert("Agregado correctamente"); },
+      error => { alert(error.error.mensaje); }
     );
   }
 

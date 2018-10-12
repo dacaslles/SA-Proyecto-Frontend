@@ -16,9 +16,28 @@
   
   <ng-template #listBlock>
     <div *ngIf="mostrarElectores">
-      <li *ngFor="let elector of electores">
-      <span style="font-weight: bold">{{elector.dpi}} - {{elector.nombre}}</span>
-      </li>
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>DPI</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Fecha de nacimiento</th>
+          <th>Género </th>
+          <th>Dirección</th>
+          <th>¿Ya votó?</th>
+        </tr>
+        <tr *ngFor="let elector of electores">
+          <td>{{elector.idElector}}</td>
+          <td>{{elector.dpi}}</td>
+          <td>{{elector.nombres}}</td>
+          <td>{{elector.apellidos}}</td>
+          <td>{{elector.fechaNacimiento}}</td>
+          <td>{{elector.genero}}</td>
+          <td>{{elector.direccion + ", " + elector.extraDireccion}}</td>
+          <td>{{elector.votoEmitido}}</td>
+        </tr>
+      </table>
     </div>
   </ng-template>
 

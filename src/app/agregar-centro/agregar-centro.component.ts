@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Centro } from '../Centro';
+import { Centro } from '../centro';
 
 @Component({
   selector: 'app-agregar-centro',
@@ -38,8 +38,8 @@ export class AgregarCentroComponent implements OnInit {
         })
       })
     .subscribe(
-      data => { console.warn("succesful"); },
-      error => { console.warn(JSON.stringify(error)); }
+      data => { alert("Agregado correctamente"); },
+      error => { alert(error.error.mensaje); }
     );
   }
 }

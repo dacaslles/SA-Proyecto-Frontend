@@ -16,9 +16,20 @@
     
     <ng-template #listBlock>
       <div *ngIf="mostrarMesas">
-        <li *ngFor="let mesa of mesas">
-        <span style="font-weight: bold">{{mesa.numMesa}}</span>
-        </li>
+        <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>Número de mesa</th>
+            <th>Nulos</th>
+            <th>Blancos</th>
+          </tr>
+          <tr *ngFor="let mesa of mesas">
+            <td>{{mesa.idMesa}}</td>
+            <td>{{mesa.numMesa}}</td>
+            <td>{{mesa.cantNulos}}</td>
+            <td>{{mesa.cantBlancos}}</td>
+          </tr>
+        </table>
       </div>
     </ng-template>
   
