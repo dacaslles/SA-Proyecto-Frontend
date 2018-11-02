@@ -12,6 +12,7 @@ import { ModificarMesasComponent } from './modificar-mesas/modificar-mesas.compo
 import { AgregarCentroComponent } from './agregar-centro/agregar-centro.component';
 import { AgregarElectorComponent } from './agregar-elector/agregar-elector.component';
 import { NavbarComponent } from './navbar.component';
+import { VotosGeneralComponent } from './votos-general/votos-general.component';
 
 const appRoutes: Routes = [
   { path: 'EmisionVotos', component: EmisionVotoComponent},
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   { path: 'ModificarMesa/:id', component: ModificarMesasComponent},
   { path: 'AgregarCentro', component: AgregarCentroComponent},
   { path: 'ConsultaElectores', component: ConsultaElectoresComponent},
-  { path: 'AgregarElector', component: AgregarElectorComponent}
+  { path: 'AgregarElector', component: AgregarElectorComponent},
+  { path: 'VotosGeneral', component: VotosGeneralComponent}
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     ModificarMesasComponent,
     AgregarCentroComponent,
     AgregarElectorComponent,
-    NavbarComponent
+    NavbarComponent,
+    VotosGeneralComponent
   ],
   imports: [
     RouterModule.forRoot(
