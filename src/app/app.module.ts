@@ -11,6 +11,7 @@ import { ConsultaElectoresComponent } from './consulta-electores/consulta-electo
 import { ModificarMesasComponent } from './modificar-mesas/modificar-mesas.component';
 import { AgregarCentroComponent } from './agregar-centro/agregar-centro.component';
 import { AgregarElectorComponent } from './agregar-elector/agregar-elector.component';
+import { NavbarComponent } from './navbar.component';
 
 const appRoutes: Routes = [
   { path: 'EmisionVotos', component: EmisionVotoComponent},
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     ConsultaElectoresComponent,
     ModificarMesasComponent,
     AgregarCentroComponent,
-    AgregarElectorComponent
+    AgregarElectorComponent,
+    NavbarComponent
   ],
   imports: [
     RouterModule.forRoot(
