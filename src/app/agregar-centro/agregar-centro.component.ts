@@ -31,7 +31,7 @@ export class AgregarCentroComponent implements OnInit {
     let datosCentro = new Centro(nombre,direccion,extraDireccion,{"idMunicipio":municipio});
     
 
-    this.http.post('http://elecciones-sa.tk:8080/elecciones/rest/centros-votacion/',datosCentro,
+    this.http.post('http://esbg5.us-e2.cloudhub.io/Grupo5/Agregar_Centro/',datosCentro,
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'

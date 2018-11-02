@@ -13,6 +13,7 @@ import { AgregarCentroComponent } from './agregar-centro/agregar-centro.componen
 import { AgregarElectorComponent } from './agregar-elector/agregar-elector.component';
 import { NavbarComponent } from './navbar.component';
 import { VotosGeneralComponent } from './votos-general/votos-general.component';
+import { VotosMunicipioComponent } from './votos-municipio/votos-municipio.component';
 
 const appRoutes: Routes = [
   { path: 'EmisionVotos', component: EmisionVotoComponent},
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     AgregarCentroComponent,
     AgregarElectorComponent,
     NavbarComponent,
-    VotosGeneralComponent
+    VotosGeneralComponent,
+    VotosMunicipioComponent
   ],
   imports: [
     RouterModule.forRoot(

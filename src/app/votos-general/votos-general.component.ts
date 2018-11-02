@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { HttpClient } from '@angular/common/http';
-import { forEach } from '@angular/router/src/utils/collection';
-import { element } from '@angular/core/src/render3/instructions';
-import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-votos-general',
