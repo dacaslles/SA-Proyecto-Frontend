@@ -9,14 +9,15 @@ import { HttpClient } from '@angular/common/http';
 export class VotosMunicipioComponent implements OnInit {
 
   titulo_lista = "Votos por Departamento/Municipio";
+  partidosArr: any[];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http.get('http://35.229.27.131:1337/ws/rest/votos/dm/').toPromise()
     .then(
-      (data:any[]) => {
-        //this.result = data;
+      (data:any) => {
+        this.partidosArr = data.objRespuesta.votos;
         console.warn(data);
         
       });

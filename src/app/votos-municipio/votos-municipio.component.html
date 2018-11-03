@@ -1,18 +1,26 @@
 <div class="container">
-  <h3 style="text-decoration:underline">{{titulo_lista}}</h3>
-  <div>
-    <table *ngFor="let departamento of departamentos" class="table">
-      <tr *ngFor="let partido of partidos">
-        <th>{{partido.nombrePartido}}</th>
-      </tr>
-      <tr *ngFor="let centro of centros">
-        <td>{{centro.idCentro}}</td>
-        <td>{{centro.nombre}}</td>
-        <td>{{centro.direccion + ", " + centro.extraDireccion}}</td>
-      </tr>
-    </table>
+  <h1 style="text-decoration:underline">{{titulo_lista}}</h1>
+  <div *ngFor="let partido of partidosArr">
+    <h2>{{partido.nombrePartido}}</h2>
+    <div *ngFor="let departamento of partido.votosDepto">
+      <h3>{{departamento.nombre}}</h3>
+      <table class="table">
+        <tr>
+          <th>Municipio</th>
+          <th>Votos</th>
+        </tr>
+        <tr *ngFor="let municipio of departamento.municipios">
+          <td>{{municipio.nombre}}</td>
+          <td>{{municipio.votos}}</td>
+        </tr>
+        <!--<tr *ngFor="municipio2 of departamento.municipios">
+          <td>{{municipio2.votos}}</td>
+        </tr>-->
+      </table>
+    </div>
   </div>
 
+  <!--
   <ng-template #oneBlock>
     <div *ngIf="mostrarCentros">
       <span><span style="font-weight: bold">{{centros.nombre}}</span></span>
@@ -31,4 +39,5 @@
       <div><span>{{resultado}}</span></div>
     </div>
   </ng-template>
+  -->
 </div>

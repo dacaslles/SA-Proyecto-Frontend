@@ -23,7 +23,8 @@ const appRoutes: Routes = [
   { path: 'AgregarCentro', component: AgregarCentroComponent},
   { path: 'ConsultaElectores', component: ConsultaElectoresComponent},
   { path: 'AgregarElector', component: AgregarElectorComponent},
-  { path: 'VotosGeneral', component: VotosGeneralComponent}
+  { path: 'VotosGeneral', component: VotosGeneralComponent},
+  { path: 'VotosMunicipio', component: VotosMunicipioComponent}
 ];
 
 @NgModule({

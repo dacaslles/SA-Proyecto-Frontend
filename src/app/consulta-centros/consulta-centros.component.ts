@@ -30,7 +30,7 @@ export class ConsultaCentrosComponent implements OnInit {
     this.mostrarCentros = false;
 
     if(value == ''){
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/centros-votacion/')
+      this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Consulta_Centro/')
       .subscribe(
         (data) => {
           this.titulo_lista = "Lista de centros de votación";
@@ -42,7 +42,7 @@ export class ConsultaCentrosComponent implements OnInit {
           //console.warn(dataJson);
         });
     } else {
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/centros-votacion/' + value)
+      this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Consulta_Centro/' + value)
       .subscribe(
         (data) => {
           this.titulo_lista = "Información del centro";
