@@ -42,7 +42,7 @@ export class ConsultaElectoresComponent implements OnInit {
           //console.warn(dataJson);
         });
     } else {
-      this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Electores/' + value)
+      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/electores/' + value)
       .subscribe(
         (data) => {
           this.titulo_lista = "Información del centro";

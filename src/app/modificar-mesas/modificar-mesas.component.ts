@@ -48,7 +48,7 @@ export class ModificarMesasComponent implements OnInit {
 
     this.mesa.numMesa = numMesa;
 
-    this.http.put('http://esbg5.us-e2.cloudhub.io/Grupo5/Modificar_Mesa/'+this.mesa.idMesa,datosMesa,
+    this.http.put('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/'+this.mesa.idMesa,datosMesa,
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
