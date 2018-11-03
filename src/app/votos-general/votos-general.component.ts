@@ -60,7 +60,7 @@ export class VotosGeneralComponent implements OnInit {
           data: this.arrValues,
           fill: false,
           lineTension: 0.2,
-          backgroundColor: ["red","blue","yellow","green","purple","orange","white","black","brown","gray","red","red"],
+          backgroundColor: ["red","blue","yellow","green","purple","gray","white","black","brown","gray","red","red"],
           borderColor: "black",
           borderWidth: 1
         }]
