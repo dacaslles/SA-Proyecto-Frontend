@@ -2,7 +2,7 @@
     <h1>Consulta Mesas</h1>
     <form [formGroup]="GrupoMesa" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="id">ID</label>
+        <label for="id">DPI</label>
         <input type="text" class="form-control" formControlName="id" required>
       </div>
   
@@ -36,7 +36,8 @@
     <ng-template #oneBlock>
       <div *ngIf="mostrarMesas">
         <div>
-        <ul>
+        <h3></h3>
+        <!--<ul>
           <li>Id: {{mesas.idMesa}}</li>
           <li>Numero de mesa: <span style="font-weight: bold">{{mesas.numMesa}}</span></li>
           <li><span>cantidad de nulos: {{mesas.cantNulos}}</span></li>
@@ -49,7 +50,7 @@
           <div style="margin-right:auto; padding:5px; width:100px; display:inline-block">
             <button (click)="onDelete()" class="btn btn-primary">Borrar</button>
           </div>
-        </div>
+        </div>-->
         </div>
         <div><span>{{resultado}}</span></div>
       </div>

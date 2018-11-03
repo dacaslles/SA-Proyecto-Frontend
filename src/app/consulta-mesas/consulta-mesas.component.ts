@@ -47,18 +47,19 @@ export class ConsultaMesasComponent implements OnInit {
           //console.warn(dataJson);
         });
     } else {
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/' + value)
+      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/consultas/ESB/mesa?dpi=' + value)
       .subscribe(
-        (data) => {
+        (data: any) => {
           this.titulo_lista = "Información de la mesa";
           this.mostrarMesas = true;
-          this.mesas = data;
+          this.mesas = data.mensaje;
           this.unaMesa = true;
           console.warn(data);
         },
-        (error) => {
+        (error: any) => {
           this.mostrarMesas = false;
-          this.titulo_lista = "No existe una mesa con el ID indicado";
+          this.titulo_lista = error.error.mensaje;
+          //alert(error.mensaje);
           console.warn(error);
         }
         );
