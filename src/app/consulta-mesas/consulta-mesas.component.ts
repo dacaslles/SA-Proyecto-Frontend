@@ -47,7 +47,7 @@ export class ConsultaMesasComponent implements OnInit {
           //console.warn(dataJson);
         });
     } else {
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/consultas/ESB/mesa?dpi=' + value)
+      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/consultas/ESB/mesa?dpi="' + value+'"')
       .subscribe(
         (data: any) => {
           this.titulo_lista = "Información de la mesa";
