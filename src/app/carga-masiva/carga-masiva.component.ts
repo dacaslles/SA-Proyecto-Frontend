@@ -30,7 +30,7 @@ export class CargaMasivaComponent implements OnInit {
     else if(tipo == "mesas")
       url = "http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/carga/";
     else if(tipo == "votos")
-      url = "";
+      url = "http://elecciones-sa.tk:8080/elecciones/rest/votos/carga/";
 
     this.http.post(url,texto,
       {
