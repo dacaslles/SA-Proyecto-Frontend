@@ -19,10 +19,10 @@ export class VotosGeneralComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/votos/resultados/').toPromise()
+    this.http.get('https://endpoints-dot-sa-central-server.appspot.com/_ah/api/voto/v1/contabilizar/').toPromise()
     .then(
-      (data:any[]) => {
-        this.result = data;
+      (data:any) => {
+        this.result = data.objetoRespuesta.votos;
         console.warn(data);
         
         let i = 0;
@@ -30,12 +30,12 @@ export class VotosGeneralComponent implements OnInit {
         this.arrValues = new Array();
         
         this.result.forEach(element => {
-          this.arrLabels.push(element.nombre);
-          this.arrValues.push(element.cantidad);
+          this.arrLabels.push(element.nombrePartido);
+          this.arrValues.push(element.votos);
         });
         
-        this.arrLabels.pop();
-        this.total = this.arrValues.pop();
+        //this.arrLabels.pop();
+        //this.total = this.arrValues.pop();
         /*for(i=0; i<this.result.length; i++){
           
           this.arrLabels.push(this.result[i].nombre);
@@ -55,7 +55,7 @@ export class VotosGeneralComponent implements OnInit {
         //labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
         labels: this.arrLabels,
         datasets: [{
-          label: 'Total de votos: ' + this.total,
+          label: '',
           //data: [9,7,3,5,2,10,15,16,19,3,1,9],
           data: this.arrValues,
           fill: false,
