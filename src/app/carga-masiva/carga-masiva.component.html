@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Carga Masiva</h1>
+  <form [formGroup]="GrupoCarga" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <div heigth="200">
+        <label>Tipo:  </label>
+        <select formControlName="tipo">
+          <option value="electores">Electores</option>
+          <option value="mesas">Mesas</option>
+          <option value="votos">Votos</option>
+        </select>
+      </div>
+      <label for="texto">Json: </label>
+      <textarea rows="20" type="text" class="form-control" formControlName="texto"  required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Agregar</button>
+
+  </form>
+</div>
