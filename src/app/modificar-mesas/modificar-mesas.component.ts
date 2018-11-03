@@ -26,7 +26,7 @@ export class ModificarMesasComponent implements OnInit {
   ngOnInit() {
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.idMesa = id;
-    this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/' + this.idMesa)
+    this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Modificar_Mesa/' + this.idMesa)
     .subscribe(
       (data) => {
         this.mesa = data;
@@ -48,7 +48,7 @@ export class ModificarMesasComponent implements OnInit {
 
     this.mesa.numMesa = numMesa;
 
-    this.http.put('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/'+this.mesa.idMesa,datosMesa,
+    this.http.put('http://esbg5.us-e2.cloudhub.io/Grupo5/Modificar_Mesa/'+this.mesa.idMesa,datosMesa,
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'

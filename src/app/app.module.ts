@@ -14,6 +14,7 @@ import { AgregarElectorComponent } from './agregar-elector/agregar-elector.compo
 import { NavbarComponent } from './navbar.component';
 import { VotosGeneralComponent } from './votos-general/votos-general.component';
 import { VotosMunicipioComponent } from './votos-municipio/votos-municipio.component';
+import { VotosEdadComponent } from './votos-edad/votos-edad.component';
 
 const appRoutes: Routes = [
   { path: 'EmisionVotos', component: EmisionVotoComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
   { path: 'ConsultaElectores', component: ConsultaElectoresComponent},
   { path: 'AgregarElector', component: AgregarElectorComponent},
   { path: 'VotosGeneral', component: VotosGeneralComponent},
-  { path: 'VotosMunicipio', component: VotosMunicipioComponent}
+  { path: 'VotosMunicipio', component: VotosMunicipioComponent},
+  { path: 'VotosEdad', component: VotosEdadComponent}
 ];
 
 @NgModule({
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     AgregarElectorComponent,
     NavbarComponent,
     VotosGeneralComponent,
-    VotosMunicipioComponent
+    VotosMunicipioComponent,
+    VotosEdadComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -1,0 +1,45 @@
+<div class="container">
+  <h1 style="text-decoration:underline">{{titulo_lista}}</h1>
+  <div *ngFor="let partido of partidosArr">
+    <h2>{{partido.nombrePartido}}</h2>
+    <div *ngFor="let departamento of partido.votosDepto">
+      <h3>{{departamento.nombre}}</h3>
+      <table>
+        <tr>
+          <td width="75" heigth="50">Total: {{departamento.votos}}</td>
+          <td width="100" heigth="50">Masculino: {{departamento.votosM}}</td>
+          <td width="100" heigth="50">Femenino: {{departamento.votosF}}</td>
+        </tr>
+      </table>
+      <table class="table">
+        <tr>
+          <th>M 18-25</th>
+          <th>F 18-25</th>
+          <th>M 26-35</th>
+          <th>F 26-35</th>
+          <th>M 36-45</th>
+          <th>F 36-45</th>
+          <th>M 46-55</th>
+          <th>F 46-55</th>
+          <th>M 56-00</th>
+          <th>F 56-00</th>
+        </tr>
+        <tr>
+            <td>{{departamento.M18_25}}</td>
+            <td>{{departamento.F18_25}}</td>
+            <td>{{departamento.M26_35}}</td>
+            <td>{{departamento.F26_35}}</td>
+            <td>{{departamento.M36_45}}</td>
+            <td>{{departamento.F36_45}}</td>
+            <td>{{departamento.M46_55}}</td>
+            <td>{{departamento.F46_55}}</td>
+            <td>{{departamento.M56_00}}</td>
+            <td>{{departamento.F56_00}}</td>
+        </tr>
+        <!--<tr *ngFor="municipio2 of departamento.municipios">
+          <td>{{municipio2.votos}}</td>
+        </tr>-->
+      </table>
+    </div>
+  </div>
+</div>

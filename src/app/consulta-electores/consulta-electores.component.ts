@@ -30,7 +30,7 @@ export class ConsultaElectoresComponent implements OnInit {
     this.mostrarElectores = false;
 
     if(value == ''){
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/electores/')
+      this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Electores/')
       .subscribe(
         (data) => {
           this.titulo_lista = "Lista de electores";
@@ -42,7 +42,7 @@ export class ConsultaElectoresComponent implements OnInit {
           //console.warn(dataJson);
         });
     } else {
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/electores/' + value)
+      this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Electores/' + value)
       .subscribe(
         (data) => {
           this.titulo_lista = "Información del centro";

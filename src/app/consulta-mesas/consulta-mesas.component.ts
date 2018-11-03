@@ -35,7 +35,7 @@ export class ConsultaMesasComponent implements OnInit {
     this.resultado = "";
 
     if(value == ''){
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/')
+      this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Consulta_mesa/')
       .subscribe(
         (data) => {
           this.titulo_lista = "Lista de mesas";
@@ -47,7 +47,7 @@ export class ConsultaMesasComponent implements OnInit {
           //console.warn(dataJson);
         });
     } else {
-      this.http.get('http://elecciones-sa.tk:8080/elecciones/rest/mesas-votacion/' + value)
+      this.http.get('http://esbg5.us-e2.cloudhub.io/Grupo5/Consulta_mesa/' + value)
       .subscribe(
         (data) => {
           this.titulo_lista = "Información de la mesa";

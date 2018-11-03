@@ -43,7 +43,7 @@ export class AgregarElectorComponent implements OnInit {
     let datosElector = new Elector(dpi,numPadron,nombres,apellidos,fechaNacimiento,genero,direccion,extraDireccion,{"idMesa":idMesa});
     
 
-    this.http.post('http://elecciones-sa.tk:8080/elecciones/rest/electores/',datosElector,
+    this.http.post('http://esbg5.us-e2.cloudhub.io/Grupo5/Agregar_Elector/',datosElector,
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
